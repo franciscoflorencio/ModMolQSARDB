@@ -1,0 +1,11 @@
+# Ignore all .env files
+.env
+*.env
+
+# Ignore specific .env files
+config/.env
+secrets/.env
+
+# Other ignored files
+node_modules/
+.DS_Store

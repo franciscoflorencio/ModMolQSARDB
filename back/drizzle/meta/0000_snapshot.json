@@ -1,0 +1,480 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.doenca_chagas": {
+      "name": "doenca_chagas",
+      "schema": "",
+      "columns": {
+        "ChEMBL ID": {
+          "name": "ChEMBL ID",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Name": {
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Synonyms": {
+          "name": "Synonyms",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Type": {
+          "name": "Type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Max Phase": {
+          "name": "Max Phase",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Molecular Weight": {
+          "name": "Molecular Weight",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Targets": {
+          "name": "Targets",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Bioactivities": {
+          "name": "Bioactivities",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "AlogP": {
+          "name": "AlogP",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Polar Surface Area": {
+          "name": "Polar Surface Area",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HBA": {
+          "name": "HBA",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HBD": {
+          "name": "HBD",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "#RO5 Violations": {
+          "name": "#RO5 Violations",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "#Rotatable Bonds": {
+          "name": "#Rotatable Bonds",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Passes Ro3": {
+          "name": "Passes Ro3",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "QED Weighted": {
+          "name": "QED Weighted",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CX Acidic pKa": {
+          "name": "CX Acidic pKa",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CX Basic pKa": {
+          "name": "CX Basic pKa",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CX LogP": {
+          "name": "CX LogP",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CX LogD": {
+          "name": "CX LogD",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Aromatic Rings": {
+          "name": "Aromatic Rings",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Structure Type": {
+          "name": "Structure Type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Inorganic Flag": {
+          "name": "Inorganic Flag",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Heavy Atoms": {
+          "name": "Heavy Atoms",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HBA (Lipinski)": {
+          "name": "HBA (Lipinski)",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HBD (Lipinski)": {
+          "name": "HBD (Lipinski)",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "#RO5 Violations (Lipinski)": {
+          "name": "#RO5 Violations (Lipinski)",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Molecular Weight (Monoisotopic)": {
+          "name": "Molecular Weight (Monoisotopic)",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Np Likeness Score": {
+          "name": "Np Likeness Score",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Molecular Species": {
+          "name": "Molecular Species",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Molecular Formula": {
+          "name": "Molecular Formula",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Smiles": {
+          "name": "Smiles",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Inchi Key": {
+          "name": "Inchi Key",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Inchi": {
+          "name": "Inchi",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Withdrawn Flag": {
+          "name": "Withdrawn Flag",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Orphan": {
+          "name": "Orphan",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false
+    },
+    "public.doenca_leishmaniose": {
+      "name": "doenca_leishmaniose",
+      "schema": "",
+      "columns": {
+        "ChEMBL ID": {
+          "name": "ChEMBL ID",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Name": {
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Synonyms": {
+          "name": "Synonyms",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Type": {
+          "name": "Type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Max Phase": {
+          "name": "Max Phase",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Molecular Weight": {
+          "name": "Molecular Weight",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Targets": {
+          "name": "Targets",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Bioactivities": {
+          "name": "Bioactivities",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "AlogP": {
+          "name": "AlogP",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Polar Surface Area": {
+          "name": "Polar Surface Area",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HBA": {
+          "name": "HBA",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HBD": {
+          "name": "HBD",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "#RO5 Violations": {
+          "name": "#RO5 Violations",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "#Rotatable Bonds": {
+          "name": "#Rotatable Bonds",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Passes Ro3": {
+          "name": "Passes Ro3",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "QED Weighted": {
+          "name": "QED Weighted",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CX Acidic pKa": {
+          "name": "CX Acidic pKa",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CX Basic pKa": {
+          "name": "CX Basic pKa",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CX LogP": {
+          "name": "CX LogP",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CX LogD": {
+          "name": "CX LogD",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Aromatic Rings": {
+          "name": "Aromatic Rings",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Structure Type": {
+          "name": "Structure Type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Inorganic Flag": {
+          "name": "Inorganic Flag",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Heavy Atoms": {
+          "name": "Heavy Atoms",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HBA (Lipinski)": {
+          "name": "HBA (Lipinski)",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "HBD (Lipinski)": {
+          "name": "HBD (Lipinski)",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "#RO5 Violations (Lipinski)": {
+          "name": "#RO5 Violations (Lipinski)",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Molecular Weight (Monoisotopic)": {
+          "name": "Molecular Weight (Monoisotopic)",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Np Likeness Score": {
+          "name": "Np Likeness Score",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Molecular Species": {
+          "name": "Molecular Species",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Molecular Formula": {
+          "name": "Molecular Formula",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Smiles": {
+          "name": "Smiles",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Inchi Key": {
+          "name": "Inchi Key",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Inchi": {
+          "name": "Inchi",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Withdrawn Flag": {
+          "name": "Withdrawn Flag",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Orphan": {
+          "name": "Orphan",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "tables": {}
+  }
+}
