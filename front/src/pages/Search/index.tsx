@@ -67,6 +67,7 @@ interface IRow {
   logpMlogpPrediction: number;
   logpAlogpAssessment: string;
   logpAlogpPrediction: number;
+  organism: string;
 }  
 
 const themes = [
@@ -199,6 +200,7 @@ const Search = () => {
     { field: 'logpMlogpPrediction', headerName: 'LogP MLOGP Prediction' },
     { field: 'logpAlogpAssessment', headerName: 'LogP ALOGP Assessment' },
     { field: 'logpAlogpPrediction', headerName: 'LogP ALOGP Prediction' },
+    { field: 'organism', headerName: 'Organism' },
   ]);
 
   // Default column settings
