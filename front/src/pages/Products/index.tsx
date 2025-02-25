@@ -26,20 +26,27 @@ const Products: React.FC = () => {
                 >
                     Bem-vindo à página de serviços. Aqui você pode baixar nossa database e acessar o serviço de banco de dados.
                 </Description>
-                <ButtonContainer
-                    as={motion.a}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <Button                 
-                        href="\database"
+                <ButtonContainer>
+                    <Button
+                        as={motion.a}
+                        href="/database.csv"
+                        download="database.csv"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         Baixar database
                     </Button>
                     <Button
+                        as={motion.a}
                         href="/Search"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
                     >
                         Acessar Serviço de Banco de Dados
                     </Button>

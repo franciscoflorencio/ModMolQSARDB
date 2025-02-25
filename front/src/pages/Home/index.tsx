@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import {
-  Image, Text, Main, Container, Title, Upper, Bottom, TextGroup, BlackButton, Pic, StyledLink, ImageGroup, SupportText, Southeast, Southwest
+  Image, Text, Main, Container, Title, Upper, TextGroup, BlackButton, Pic, StyledLink, ImageGroup, SupportText, Southeast, Southwest
 } from './styles';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -43,6 +43,14 @@ export default function Home() {
                   Fazer consulta
                 </BlackButton>
               </StyledLink>
+              <Southwest
+                as={motion.p}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                Todos os direitos reservados © 2025
+              </Southwest>
             </TextGroup>
             <div>
               <Pic
@@ -111,16 +119,6 @@ export default function Home() {
               </Southeast>
             </div>
           </Upper>
-          <Bottom as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.6 }}>
-            <Southwest
-              as={motion.p}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              Todos os direitos reservados © 2025
-            </Southwest>
-          </Bottom>
         </Main>
       </Container>
       <Footer />

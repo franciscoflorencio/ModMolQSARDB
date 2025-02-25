@@ -5,27 +5,31 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
-    padding: 10px;
+    min-height: 80vh; /* Usar min-height para garantir que o conteúdo não fique cortado */
+    padding: 20px; /* Aumentar o padding para melhorar a responsividade */
     box-sizing: border-box;
-    background-color:rgba(238, 238, 238, 0.11);
+    background-color: rgba(238, 238, 238, 0.11);
 `;
 
 export const Title = styled.h1`
-    font-size: 2em; // Reduced from 2.5em
+    font-size: 2em; // Tamanho reduzido para telas menores
     color: #191A23; 
     margin-bottom: 15px;
+    text-align: center; /* Centralizar o título */
 `;
 
 export const Description = styled.p`
-    font-size: 1em; // Reduced from 1.2em
+    font-size: 1em; // Tamanho reduzido para telas menores
     color: #666;
     margin-bottom: 30px; 
     text-align: center;
     max-width: 500px; 
+    padding: 0 20px; /* Adicionar padding para melhorar a leitura em telas pequenas */
 `;
 
 export const ButtonContainer = styled.div`
     display: flex;
     gap: 15px; 
+    flex-wrap: wrap; /* Permitir que os botões quebrem para a próxima linha em telas pequenas */
+    justify-content: center; /* Centralizar os botões */
 `;

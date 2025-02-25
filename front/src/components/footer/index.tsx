@@ -38,7 +38,7 @@ export default function Footer() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <StyledLink to="/Terms">
+                    <StyledLink to="/UserRules">
                         Regras de Uso
                     </StyledLink>
                 </NavLink>

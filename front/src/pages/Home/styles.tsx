@@ -8,7 +8,7 @@ export const StyledLink = styled(Link)`
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
   margin: 0;
   padding: 0;
   display: flex;
@@ -49,9 +49,10 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Align children with space between */
   margin: 2rem;
-  flex-grow: 1;
+  flex-grow: 1; /* Allow Main to grow and fill the available space */
+  min-height: calc(100vh - 4rem); /* Ensure Main takes at least the full viewport height minus margins */
 
   @media (max-width: 768px) {
     margin: 1rem;
@@ -77,9 +78,9 @@ export const Bottom = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 3.5rem;
   width: 100%;
   padding: 0 2rem;
+  margin-top: auto; /* Push Bottom to the bottom of Main */
 
   @media (max-width: 768px) {
     margin-top: 2rem;
@@ -91,7 +92,7 @@ export const Bottom = styled.div`
 export const TextGroup = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
   gap: 10px;
 
   @media (max-width: 768px) {
@@ -183,20 +184,6 @@ export const Image = styled.img`
   }
 `;
 
-export const Southwest = styled.p`
-  color: #000;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px; 
-  text-align: left;
-  margin-bottom: -3rem;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-`;
-
 export const SupportText = styled.p`
   color: #000;
   font-size: 18px;
@@ -213,6 +200,19 @@ export const SupportText = styled.p`
 
 export const Southeast = styled.div`
   margin-top: 2rem;
-  margin-bottom: -6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  gap: 1rem; /* Espaço entre as imagens e o texto */
 `;
 
+export const Southwest = styled.p`
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; 
+  text-align: left; /* Alinha o texto à esquerda */
+  margin-top: 10rem; /* Espaço acima do texto */
+  width: 100%; /* Garante que o texto ocupe a largura total */
+`;

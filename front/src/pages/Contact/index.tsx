@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import { Container, Title, Form, Input, TextArea, Button, Message } from './styles';
 import Header from '../../components/header';
@@ -13,26 +12,17 @@ const Contact: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-    
-        const templateParams = {
-            name,
-            email,
-            message
-        };
 
-        emailjs.init(process.env.REACT_APP_API_KEY!);
+        // Construct the mailto link
+        const subject = encodeURIComponent("Contact Form Submission");
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+        const mailtoLink = `mailto:fa017066@gmail.com?subject=${subject}&body=${body}`;
 
-        emailjs.send(
-            process.env.REACT_APP_SERVICE_ID!,
-            process.env.REACT_APP_TEMPLATE_ID!,
-            templateParams
-        )
-        .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            setSubmitted(true);
-        }, (err) => {
-            console.log('FAILED...', err);
-        });
+        // Open the default email client
+        window.location.href = mailtoLink;
+
+        // Set submitted to true to show the success message
+        setSubmitted(true);
     };
 
     return (
@@ -54,7 +44,7 @@ const Contact: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        Formulário enviado com sucesso!
+                        Obrigado por entrar em contato! Por favor, verifique seu cliente de e-mail para enviar a mensagem.
                     </Message>
                 ) : (
                     <Form

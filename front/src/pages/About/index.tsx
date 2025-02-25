@@ -7,10 +7,13 @@ import Footer from '../../components/footer';
 
 import Alessandra from '../../assets/alessandra.png';
 import Rangel from '../../assets/rangel.png';
+import Thiago from '../../assets/thiago.jpg';
 
 const members = [
   { name: 'Carlos Rangel Rodrigues', role: 'Coordenador', imgSrc: Rangel },
-  { name: 'Alessandra Mendonça Teles Souza', role: 'Professora Colaboradora', imgSrc: Alessandra },
+  { name: 'Alessandra Mendonça Teles de Souza', role: 'Vice-Coordenadora', imgSrc: Alessandra },
+  { name: 'Thiago ', role: 'Aluno de Doutorado', imgSrc: Thiago },
+
   // ADICIONAR MEMBROS AQUI
 ];
 
