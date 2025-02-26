@@ -1,9 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../../components/button';
-import { Container, Title, Description, ButtonContainer } from './styles';
+import { Container, Title, Description, ButtonContainer, Bottom, Image, ImageGroup, SupportText } from './styles';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import Farmacia from '../../assets/farmacia_logo.png';
+import UFRJ from '../../assets/ufrj_logo.png';
+import CNPQ from '../../assets/cnpq_logo.png';
+import Faperj from '../../assets/faperj_logo.png';
 
 const Products: React.FC = () => {
     return (
@@ -51,6 +55,59 @@ const Products: React.FC = () => {
                         Acessar Serviço de Banco de Dados
                     </Button>
                 </ButtonContainer>
+
+                <Bottom>
+                <SupportText
+                  as={motion.p}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                >
+                  Agradecemos aos nossos apoiadores:
+                </SupportText>
+                <ImageGroup>
+                  <Image
+                    as={motion.img}
+                    src={Farmacia}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    whileDrag={{ scale: 0.9, rotate: 10 }}
+                    dragSnapToOrigin
+                    transition={{ duration: 0.3 }}
+                    drag
+                  />
+                  <Image
+                    as={motion.img}
+                    src={Faperj}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    whileDrag={{ scale: 0.9, rotate: 10 }}
+                    dragSnapToOrigin
+                    transition={{ duration: 0.3 }}
+                    drag
+                  />
+                  <Image
+                    as={motion.img}
+                    src={UFRJ}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    whileDrag={{ scale: 0.9, rotate: 10 }}
+                    dragSnapToOrigin
+                    transition={{ duration: 0.3 }}
+                    drag
+                  />
+                  <Image
+                    as={motion.img}
+                    src={CNPQ}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    whileDrag={{ scale: 0.9, rotate: 10 }}
+                    dragSnapToOrigin
+                    transition={{ duration: 0.3 }}
+                    drag
+                  />
+                </ImageGroup>
+              </Bottom>
             </Container>
             <Footer />
         </>

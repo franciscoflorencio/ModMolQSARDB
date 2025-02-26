@@ -7,6 +7,7 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import ImageRenderer from './ImageRenderer.jsx';
 import { Button } from "../Contact/styles.js";
+import Loading from '../../components/loading';
 
 ModuleRegistry.registerModules([AllCommunityModule, CsvExportModule]);
 
@@ -80,12 +81,12 @@ const Search = () => {
   const PAGE_SIZE = 1000; // Must match backend
   const [rowData, setRowData] = useState<IRow[]>([]);
   const [loading, setLoading] = useState(false);
+  const [initialLoading, setInitialLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [theme, setTheme] = useState(themes[0]);
   const [totalRecords, setTotalRecords] = useState(-1); // -1 = unknown
   const [hasMore, setHasMore] = useState(true);
 
-  // Fetch data function
   const fetchData = async () => {
     if (!hasMore || loading) return;
 
@@ -235,7 +236,6 @@ const Search = () => {
     gridRef.current.api.exportDataAsCsv(params);
   }, [alert]);
 
-
   return (
     <>
       <Header />
@@ -258,21 +258,28 @@ const Search = () => {
           <Button onClick={onBtnExport}>Download Grid</Button>
         </div>
 
-        <div style={{ height: '100%', width: '100%' }}>
-          <AgGridReact
-            ref={gridRef}
-            rowData={rowData}
-            columnDefs={colDefs}
-            defaultColDef={defaultColDef}
-            pagination={true}
-            myTheme={myTheme}
-            onBodyScroll={handleScroll}
-            loadingOverlayComponent={
-              () => <div>Loading more records...</div>
-            }
-            
-          />
-        </div>
+        {initialLoading ? (
+          <Loading />
+        ) : (
+          <div style={{ width: '100%', position: 'relative' }}>
+            <div style={{ height: '600px', width: '100%' }} className={theme.id}>
+              <AgGridReact
+                ref={gridRef}
+                rowData={rowData}
+                columnDefs={colDefs}
+                defaultColDef={defaultColDef}
+                domLayout="normal"
+                onBodyScroll={handleScroll}
+                onGridReady={(params) => params.api.sizeColumnsToFit()}
+              />
+            </div>
+            {loading && (
+              <div style={{ textAlign: 'center', padding: '1rem' }}>
+                Loading more records...
+              </div>
+            )}
+          </div>
+        )}
       </Container>
       <Footer />
     </>

@@ -33,3 +33,53 @@ export const ButtonContainer = styled.div`
     flex-wrap: wrap; /* Permitir que os botões quebrem para a próxima linha em telas pequenas */
     justify-content: center; /* Centralizar os botões */
 `;
+
+export const Bottom = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  gap: 1rem; /* Espaço entre as imagens e o texto */
+`;
+
+export const SupportText = styled.p`
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
+
+export const ImageGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
+
+export const Image = styled.img`
+  display: flex;
+  width: 100px;
+  border-radius: 10px;
+  transition: transform 0.3s; 
+
+  @media (max-width: 768px) {
+    width: 60px;
+    border-radius: 10px;
+  }
+
+  &:hover {
+    transform: rotate(90deg) scale(1.1); 
+  }
+`;

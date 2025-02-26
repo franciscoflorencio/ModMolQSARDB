@@ -10,9 +10,10 @@ import Rangel from '../../assets/rangel.png';
 import Thiago from '../../assets/thiago.jpg';
 
 const members = [
-  { name: 'Carlos Rangel Rodrigues', role: 'Coordenador', imgSrc: Rangel },
-  { name: 'Alessandra Mendonça Teles de Souza', role: 'Vice-Coordenadora', imgSrc: Alessandra },
+  { name: 'Carlos Rangel Rodrigues', role: 'Coordenador', imgSrc: Rangel, scholarLink: "", lattesLink: " http://lattes.cnpq.br/4265523459861860" },
+  { name: 'Alessandra Mendonça Teles de Souza', role: 'Vice-Coordenadora', imgSrc: Alessandra, scholarLink: "https://scholar.google.com.br/citations?hl=pt-BR&user=wnVM0gIAAAAJ", lattesLink: "http://lattes.cnpq.br/7047409069633400" },
   { name: 'Thiago ', role: 'Aluno de Doutorado', imgSrc: Thiago },
+
 
   // ADICIONAR MEMBROS AQUI
 ];
@@ -45,6 +46,8 @@ const SobreNos: React.FC = () => {
               name={member.name}
               role={member.role}
               imgSrc={member.imgSrc}
+              scholarLink={member.scholarLink}
+              lattesLink={member.lattesLink}
               as={motion.div}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
