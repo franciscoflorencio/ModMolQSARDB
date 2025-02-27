@@ -74,14 +74,13 @@ interface IRow {
 
 const themes = [
   { id: "themeQuartz", theme: themeQuartz },
-
 ];
 
 const Search = () => {
   const PAGE_SIZE = 1000; // Must match backend
   const [rowData, setRowData] = useState<IRow[]>([]);
   const [loading, setLoading] = useState(false);
-  const [initialLoading, setInitialLoading] = useState(true);
+  const [initialLoading, setInitialLoading] = useState(false);
   const [page, setPage] = useState(0);
   const [theme, setTheme] = useState(themes[0]);
   const [totalRecords, setTotalRecords] = useState(-1); // -1 = unknown
@@ -92,6 +91,7 @@ const Search = () => {
 
     try {
       setLoading(true);
+      setInitialLoading(true);
       const response = await fetch(
         `http://localhost:3001/molecules?offset=${page * PAGE_SIZE}`,
         { signal: AbortSignal.timeout(5000) } // Add timeout
@@ -119,6 +119,7 @@ const Search = () => {
   // Fetch data on page change
   useEffect(() => {
     fetchData();
+      
   }, [page]);
 
   // Handle grid scroll
@@ -142,7 +143,6 @@ const Search = () => {
       setHasMore(true);
     };
   }, []);
-
 
   const [colDefs] = useState([
     { field: 'articleChemblId', headerName: 'Article ChEMBL ID' },
@@ -213,8 +213,6 @@ const Search = () => {
     resizable: true,
   };
 
-  const gridRef = useRef();
-
   // AG Grid theme
   const myTheme = themeQuartz.withParams({
     browserColorScheme: "light",
@@ -258,26 +256,19 @@ const Search = () => {
           <Button onClick={onBtnExport}>Download Grid</Button>
         </div>
 
-        {initialLoading ? (
-          <Loading />
+        {loading && initialLoading ? (
+          <div style={{ height: '30rem', width: '100%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: "rgba(238, 238, 238, 0.11)"}}>
+            <Loading />
+          </div>
         ) : (
-          <div style={{ width: '100%', position: 'relative' }}>
-            <div style={{ height: '600px', width: '100%' }} className={theme.id}>
-              <AgGridReact
-                ref={gridRef}
-                rowData={rowData}
-                columnDefs={colDefs}
-                defaultColDef={defaultColDef}
-                domLayout="normal"
-                onBodyScroll={handleScroll}
-                onGridReady={(params) => params.api.sizeColumnsToFit()}
-              />
-            </div>
-            {loading && (
-              <div style={{ textAlign: 'center', padding: '1rem' }}>
-                Loading more records...
-              </div>
-            )}
+          <div style={{height: '600px', width: '100%' }} className={theme.id}>
+            <AgGridReact
+              rowData={rowData}
+              columnDefs={colDefs}
+              defaultColDef={defaultColDef}
+              onBodyScroll={handleScroll}
+              pagination={true}
+            />
           </div>
         )}
       </Container>
