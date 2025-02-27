@@ -9,3 +9,4 @@ secrets/.env
 # Other ignored files
 node_modules/
 .DS_Store
+front/public/database.csv
