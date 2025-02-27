@@ -10,3 +10,4 @@ secrets/.env
 node_modules/
 .DS_Store
 front/public/database.csv
+front/public/database.csv
