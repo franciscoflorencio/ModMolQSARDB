@@ -70,7 +70,7 @@ interface IRow {
   logpAlogpAssessment: string;
   logpAlogpPrediction: number;
   organism: string;
-}  
+}
 
 const themes = [
   { id: "themeQuartz", theme: themeQuartz },
@@ -80,18 +80,20 @@ const Search = () => {
   const PAGE_SIZE = 1000; // Must match backend
   const [rowData, setRowData] = useState<IRow[]>([]);
   const [loading, setLoading] = useState(false);
-  const [initialLoading, setInitialLoading] = useState(false);
+  const [initialLoading, setInitialLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [theme, setTheme] = useState(themes[0]);
   const [totalRecords, setTotalRecords] = useState(-1); // -1 = unknown
   const [hasMore, setHasMore] = useState(true);
+  const fetchDataRef = useRef<() => void>();
 
   const fetchData = async () => {
     if (!hasMore || loading) return;
 
     try {
       setLoading(true);
-      setInitialLoading(true);
+      console.log("Fetching data for page:", page);
+
       const response = await fetch(
         `http://localhost:3001/molecules?offset=${page * PAGE_SIZE}`,
         { signal: AbortSignal.timeout(5000) } // Add timeout
@@ -107,6 +109,11 @@ const Search = () => {
 
       const data = await response.json();
       setRowData(prev => [...prev, ...data]);
+
+      // Set initialLoading to false after the first fetch
+      if (page === 0) {
+        setInitialLoading(false);
+      }
     } catch (error) {
       console.error('Error fetching data:', error);
       setHasMore(false); // Stop loading on error
@@ -116,10 +123,11 @@ const Search = () => {
     }
   };
 
+  fetchDataRef.current = fetchData;
+
   // Fetch data on page change
   useEffect(() => {
-    fetchData();
-      
+    fetchDataRef.current();
   }, [page]);
 
   // Handle grid scroll
@@ -237,10 +245,10 @@ const Search = () => {
   return (
     <>
       <Header />
-      <Container 
-        as={motion.div} 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
+      <Container
+        as={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
         <Title
@@ -256,7 +264,7 @@ const Search = () => {
           <Button onClick={onBtnExport}>Download Grid</Button>
         </div>
 
-        {loading && initialLoading ? (
+        {initialLoading || loading ? (
           <div style={{ height: '30rem', width: '100%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: "rgba(238, 238, 238, 0.11)"}}>
             <Loading />
           </div>

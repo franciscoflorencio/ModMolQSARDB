@@ -8,11 +8,15 @@ import Footer from '../../components/footer';
 import Alessandra from '../../assets/alessandra.png';
 import Rangel from '../../assets/rangel.png';
 import Thiago from '../../assets/thiago.jpg';
+import AnaSodero from '../../assets/anasodero.jpg';
+import BarbaraVieira from '../../assets/barbaravieira.png';
 
 const members = [
   { name: 'Carlos Rangel Rodrigues', role: 'Coordenador', imgSrc: Rangel, scholarLink: "", lattesLink: " http://lattes.cnpq.br/4265523459861860" },
   { name: 'Alessandra Mendonça Teles de Souza', role: 'Vice-Coordenadora', imgSrc: Alessandra, scholarLink: "https://scholar.google.com.br/citations?hl=pt-BR&user=wnVM0gIAAAAJ", lattesLink: "http://lattes.cnpq.br/7047409069633400" },
   { name: 'Thiago ', role: 'Aluno de Doutorado', imgSrc: Thiago },
+  { name: 'Ana Carolina Rennó Sodero', role: 'Professora Adjunta', imgSrc: AnaSodero, lattesLink: "http://lattes.cnpq.br/2594571837199451"},
+  { name: 'Bárbara de Azevedo Abrahim Vieira', role: 'Professora Adjunta', imgSrc: BarbaraVieira, lattesLink: "http://lattes.cnpq.br/5694594751124057"}
 
 
   // ADICIONAR MEMBROS AQUI

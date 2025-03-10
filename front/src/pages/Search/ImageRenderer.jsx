@@ -8,7 +8,7 @@ const ImageRenderer = (props) => {
 
   // URL-encode the SMILES and create the image URL
   const encodedSmiles = encodeURIComponent(smiles);
-  const imageUrl = `https://cactus.nci.nih.gov/chemical/structure/${encodedSmiles}/image`;
+  const imageUrl = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/${encodedSmiles}/PNG?record_type=2d`;
 
   return (
     <div className="molecule-image">
