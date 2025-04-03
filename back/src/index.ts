@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
-import { dntLeishmania } from './db/schema';
+import { dntLeishmania, dntTripa } from './db/schema';
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import { sql } from 'drizzle-orm';
@@ -21,7 +21,7 @@ const pool = new Pool({
 const db = drizzle(pool);
 
 // Health check endpoint
-app.get("/hello", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
 
@@ -39,6 +39,35 @@ app.get("/molecules", async (req: Request, res: Response) => {
     // Get paginated results
     const result = await db.select()
       .from(dntLeishmania)
+      .limit(PAGE_SIZE)
+      .offset(offset);
+
+    // Set headers and send response
+    res.set({
+      'X-Total-Count': totalCount.rows[0].count, // Total records count
+      'Access-Control-Expose-Headers': 'X-Total-Count' // Allow frontend to read this header
+    });
+    res.status(200).json(result);
+  } catch (error) {
+    console.error('Database error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+app.get("/molecules2", async (req: Request, res: Response) => {
+  try {
+    const PAGE_SIZE = 1000; // Fixed page size
+    const offset = parseInt(req.query.offset as string) || 0;
+
+    // Get total count of records
+    const totalCount = await db.execute<{ count: string }>(
+      sql`SELECT COUNT(*) FROM ${dntTripa}`
+    );
+
+    // Get paginated results
+    const result = await db.select()
+      .from(dntTripa)
       .limit(PAGE_SIZE)
       .offset(offset);
 

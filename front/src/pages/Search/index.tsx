@@ -86,6 +86,7 @@ const Search = () => {
   const [totalRecords, setTotalRecords] = useState(-1); // -1 = unknown
   const [hasMore, setHasMore] = useState(true);
   const fetchDataRef = useRef<() => void>();
+  const gridRef = useRef<AgGridReact>(null);
 
   const fetchData = async () => {
     if (!hasMore || loading) return;
@@ -228,19 +229,24 @@ const Search = () => {
   });
 
   const getParams = () => {
-    const columnSeparator = ",";
     return {
-      columnSeparator: columnSeparator === "none" ? undefined : columnSeparator,
+      skipPinnedTop: true,    // Whether to skip pinned top rows
+      skipPinnedBottom: true, // Whether to skip pinned bottom rows
+      columnSeparator: ',',   // You can change this if needed
+      onlySelected: false,    // Whether to export only selected rows
+      fileName: 'leishmania_data.csv' // Custom filename
     };
   };
 
   const onBtnExport = useCallback(() => {
-    const params = getParams();
-    if(params.columnSeparator){
-      alert("NOTE: you are downloading a file with non-standard separators - it may not render correctly in Excel.",);
+    if (gridRef.current && gridRef.current.api) {
+      const params = getParams();
+      gridRef.current.api.exportDataAsCsv(params);
+    } else {
+      console.error('Grid API is not available');
     }
-    gridRef.current.api.exportDataAsCsv(params);
-  }, [alert]);
+  }, []);
+
 
   return (
     <>
@@ -271,11 +277,13 @@ const Search = () => {
         ) : (
           <div style={{height: '600px', width: '100%' }} className={theme.id}>
             <AgGridReact
+              ref={gridRef}
               rowData={rowData}
               columnDefs={colDefs}
               defaultColDef={defaultColDef}
               onBodyScroll={handleScroll}
               pagination={true}
+              modules={[ClientSideRowModelModule, CsvExportModule]}
             />
           </div>
         )}
