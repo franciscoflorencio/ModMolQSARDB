@@ -5,7 +5,6 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  background-color:rgba(238, 238, 238, 0.11);
   min-height: 100vh; 
 `;
 

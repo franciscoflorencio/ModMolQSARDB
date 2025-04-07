@@ -52,7 +52,18 @@ const Products: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                        Acessar Serviço de Banco de Dados
+                        Acessar Serviço de Banco de Dados da Leishmania
+                    </Button>
+                    <Button
+                        as={motion.a}
+                        href="/Search"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                        Acessar Serviço de Banco de Dados da Trypanosoma Cruzi
                     </Button>
                 </ButtonContainer>
 
