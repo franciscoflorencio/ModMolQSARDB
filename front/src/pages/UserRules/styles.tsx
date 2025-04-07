@@ -34,9 +34,9 @@ export const RuleItem = styled.li`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color:#979797;
     font-size: 1.1em;
-    color: #555;
+    color: #f3f3f3;
 
     strong {
-    color: #333;
+    color: #121212;
     }
 `;

@@ -32,6 +32,7 @@ export const ButtonContainer = styled.div`
     gap: 15px; 
     flex-wrap: wrap; /* Permitir que os botões quebrem para a próxima linha em telas pequenas */
     justify-content: center; /* Centralizar os botões */
+    flex-direction: column;
 `;
 
 export const Bottom = styled.div`

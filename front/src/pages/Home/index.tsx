@@ -39,8 +39,24 @@ export default function Home() {
                   as={motion.button}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+  
                 >
-                  Fazer consulta
+                  Fazer consulta da Leishmania
+                </BlackButton>
+              </StyledLink>
+              <StyledLink to="/Search2">
+                <BlackButton
+                  as={motion.button}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }} 
+                >
+                  Fazer consulta da Trypanosoma Cruzi
                 </BlackButton>
               </StyledLink>
               <Southwest
