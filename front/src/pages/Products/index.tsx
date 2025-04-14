@@ -56,7 +56,7 @@ const Products: React.FC = () => {
                     </Button>
                     <Button
                         as={motion.a}
-                        href="/Search"
+                        href="/Search2"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         initial={{ opacity: 0, y: 20 }}
