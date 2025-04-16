@@ -5,11 +5,11 @@ import { Container, Description, Title, MembersContainer } from './styles';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 
-import Alessandra from '../../assets/alessandra.png';
-import Rangel from '../../assets/rangel.png';
-import Thiago from '../../assets/thiago.jpg';
-import AnaSodero from '../../assets/anasodero.jpg';
-import BarbaraVieira from '../../assets/barbaravieira.png';
+import Alessandra from '../../assets/alessandra2.png';
+import Rangel from '../../assets/rangel2.png';
+import Thiago from '../../assets/thiago2.png';
+import AnaSodero from '../../assets/ana2.png';
+import BarbaraVieira from '../../assets/barbara2.png';
 
 const members = [
   { name: 'Carlos Rangel Rodrigues', role: 'Coordenador', imgSrc: Rangel, scholarLink: "", lattesLink: " http://lattes.cnpq.br/4265523459861860" },

@@ -15,7 +15,6 @@ export const Card = styled.div`
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 300px; // Aumentei a altura da imagem
   object-fit: cover;
   object-position: top; // Garante que o rosto fique visível
 `;
