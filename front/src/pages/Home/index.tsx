@@ -24,7 +24,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                ModMolQSAR<br />Database
+                TriTrypChem<br />Database
               </Title>
               <Text
                 as={motion.p}
@@ -32,7 +32,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Uma idealização inovadora para visualização de base de dados de Doenças Tropicais Negligenciadas (DNT’s). Neste site originado de uma parceria da Universidade Federal do Rio de Janeiro com o CNPQ você poderá observar o tópico citado e muito mais!
+                An innovative concept for visualizing Neglected Tropical Diseases (NTDs) databases. On this website, resulting from a partnership between the Federal University of Rio de Janeiro (UFRJ) and CNPq, you'll be able to explore the Leishmania and Trypanosoma Cruzi data, the aforementioned topic and much more!
               </Text>
               <StyledLink to="/Search">
                 <BlackButton
@@ -44,7 +44,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.2 }}
   
                 >
-                  Fazer consulta da Leishmania
+                  Search Leishmania
                 </BlackButton>
               </StyledLink>
               <StyledLink to="/Search2">
@@ -56,7 +56,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }} 
                 >
-                  Fazer consulta da Trypanosoma Cruzi
+                  Search Trypanosoma Cruzi
                 </BlackButton>
               </StyledLink>
               <Southwest
