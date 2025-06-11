@@ -1,26 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import MemberCard from '../../components/membercard';
-import { Container, Description, Title, MembersContainer } from './styles';
+import { Container, Description, Title, Section, SectionTitle, SectionContent, TeamLink } from './styles.tsx';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
-
-import Alessandra from '../../assets/alessandra2.png';
-import Rangel from '../../assets/rangel2.png';
-import Thiago from '../../assets/thiago2.png';
-import AnaSodero from '../../assets/ana2.png';
-import BarbaraVieira from '../../assets/barbara2.png';
-
-const members = [
-  { name: 'Carlos Rangel Rodrigues', role: 'Coordenador', imgSrc: Rangel, scholarLink: "", lattesLink: " http://lattes.cnpq.br/4265523459861860" },
-  { name: 'Alessandra Mendonça Teles de Souza', role: 'Vice-Coordenadora', imgSrc: Alessandra, scholarLink: "https://scholar.google.com.br/citations?hl=pt-BR&user=wnVM0gIAAAAJ", lattesLink: "http://lattes.cnpq.br/7047409069633400" },
-  { name: 'Thiago ', role: 'Aluno de Doutorado', imgSrc: Thiago },
-  { name: 'Ana Carolina Rennó Sodero', role: 'Professora Adjunta', imgSrc: AnaSodero, lattesLink: "http://lattes.cnpq.br/2594571837199451"},
-  { name: 'Bárbara de Azevedo Abrahim Vieira', role: 'Professora Adjunta', imgSrc: BarbaraVieira, lattesLink: "http://lattes.cnpq.br/5694594751124057"}
-
-
-  // ADICIONAR MEMBROS AQUI
-];
 
 const SobreNos: React.FC = () => {
   return (
@@ -33,34 +15,53 @@ const SobreNos: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Sobre nós
+          Sobre o ModMolQSAR
         </Title>
-        <Description
-          as={motion.p}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          O Laboratório de Modelagem Molecular e QSAR (ModMolQSAR) está ligado ao Departamento de Fármacos e Medicamentos da Faculdade de Farmácia, localizada no Centro de Ciências da Saúde (CCS) da Universidade Federal do Rio de Janeiro (UFRJ). Coordenado pelo Professor Carlos Rangel Rodrigues em colaboração com a Professora Alessandra Mendonça Teles Souza, o grupo de pesquisa é constituído por pós-doutorandos, alunos de doutorado, mestrado e iniciação científica, todos com suporte financeiro proveniente de instituições como Capes, CNPq e FAPERJ.
-        </Description>
-        <MembersContainer>
-          {members.map(member => (
-            <MemberCard
-              key={member.name}
-              name={member.name}
-              role={member.role}
-              imgSrc={member.imgSrc}
-              scholarLink={member.scholarLink}
-              lattesLink={member.lattesLink}
-              as={motion.div}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            />
-          ))}
-        </MembersContainer>
+        <Section>
+          <SectionTitle>Introdução</SectionTitle>
+          <SectionContent>
+            O Laboratório de Modelagem Molecular e QSAR (ModMolQSAR) é um grupo de pesquisa dedicado ao desenvolvimento e aplicação de métodos computacionais para a descoberta e otimização de fármacos. Atuamos na interface entre química, biologia e ciência de dados, utilizando ferramentas modernas de modelagem molecular, QSAR, docking molecular e inteligência artificial.
+          </SectionContent>
+        </Section>
+        <Section>
+          <SectionTitle>Missão e Objetivos</SectionTitle>
+          <SectionContent>
+            Nossa missão é contribuir para o avanço científico e tecnológico na área de fármacos, promovendo a formação de recursos humanos qualificados e a integração com outros grupos de pesquisa nacionais e internacionais. Buscamos desenvolver metodologias inovadoras e aplicá-las em projetos de relevância para a saúde pública.
+          </SectionContent>
+        </Section>
+        <Section>
+          <SectionTitle>Áreas de Pesquisa</SectionTitle>
+          <SectionContent>
+            Desenvolvemos e aplicamos metodologias de modelagem molecular, QSAR, docking molecular, simulações de dinâmica molecular e técnicas de inteligência artificial para a descoberta e otimização de fármacos. Nossas pesquisas abrangem diversas áreas, incluindo doenças negligenciadas, doenças neurodegenerativas e infecções virais.
+          </SectionContent>
+        </Section>
+        <Section>
+          <SectionTitle>Colaborações e Parcerias</SectionTitle>
+          <SectionContent>
+            Mantemos colaborações com grupos de pesquisa nacionais e internacionais, universidades, institutos de pesquisa e empresas farmacêuticas. Essas parcerias permitem a troca de conhecimentos, recursos e tecnologias, ampliando o impacto de nossas pesquisas.
+          </SectionContent>
+        </Section>
+        <Section>
+          <SectionTitle>Acesso e Uso dos Dados</SectionTitle>
+          <SectionContent>
+            Os dados e metodologias desenvolvidos pelo ModMolQSAR são disponibilizados para a comunidade científica através de publicações, bancos de dados e ferramentas computacionais. Incentivamos o uso e a colaboração com nossos recursos, seguindo as diretrizes de ciência aberta e compartilhamento de dados.
+          </SectionContent>
+        </Section>
+        <Section>
+          <SectionTitle>Nossa Equipe</SectionTitle>
+          <SectionContent>
+            Nossa equipe é composta por pesquisadores dedicados e talentosos, que trabalham juntos para alcançar nossos objetivos de pesquisa. Para conhecer mais sobre nossa equipe, visite nosso site dedicado.
+          </SectionContent>
+          <TeamLink href="https://equipe.modmolqsar.com.br" target="_blank" rel="noopener noreferrer">
+            Conheça Nossa Equipe
+          </TeamLink>
+        </Section>
+        <Section>
+          <SectionTitle>Contato e Informações Adicionais</SectionTitle>
+          <SectionContent>
+            Para mais informações sobre o ModMolQSAR, suas pesquisas, colaborações ou oportunidades de parceria, entre em contato conosco através do e-mail: contato@modmolqsar.com.br. Visite também nosso site para conhecer mais sobre nossos projetos e publicações.
+          </SectionContent>
+        </Section>
       </Container>
       <Footer />
     </>
